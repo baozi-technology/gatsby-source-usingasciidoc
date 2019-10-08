@@ -10,8 +10,16 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
-    `gatsby-transformer-asciidoc`,
     {
+      resolve: `gatsby-transformer-asciidoc`,
+      options: {
+        attributes: {
+          safe: `safe`,
+          attributes: ["allow-uri-read",]
+
+        },
+      },
+    },     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
